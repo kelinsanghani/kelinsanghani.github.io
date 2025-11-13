@@ -4,76 +4,308 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kelin Sanghani | Data Analyst Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a2e0f1f65d.js" crossorigin="anonymous"></script>
+
+  <style>
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background-color: #f5f6fa;
+      color: #2f3640;
+    }
+
+    header {
+      background: #192a56;
+      color: #fff;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      margin: auto;
+    }
+
+    nav h1 { font-size: 24px; letter-spacing: 1px; }
+
+    nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
+    nav ul li { margin-left: 20px; }
+    nav ul li a {
+      color: #fff; text-decoration: none; font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover { color: #00a8ff; }
+
+    .social-icons {
+      display: flex; align-items: center; gap: 15px;
+    }
+    .social-icons a {
+      color: #fff; font-size: 20px;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover { color: #00a8ff; }
+
+    section { padding: 60px 10%; }
+
+    /* === Hero === */
+    #home {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center;
+      min-height: 100vh;
+      background: linear-gradient(rgba(25,42,86,0.8), rgba(25,42,86,0.8)),
+        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71') center/cover;
+      color: white;
+    }
+    #home h1 { font-size: 42px; margin-bottom: 10px; }
+    #home p { font-size: 20px; max-width: 650px; }
+
+    .btn {
+      display: inline-block; background: #00a8ff; color: #fff;
+      padding: 10px 20px; border-radius: 5px; text-decoration: none;
+      transition: background 0.3s; margin-top: 15px;
+    }
+    .btn:hover { background: #0097e6; }
+
+    /* === About === */
+    #about { background-color: #f1f2f6; text-align: center; }
+    #about h2 { color: #192a56; margin-bottom: 15px; }
+    #about p { max-width: 700px; margin: auto; line-height: 1.6; }
+
+    /* === Skills === */
+    #skills { background: #fff; text-align: center; }
+    #skills h2 { color: #192a56; margin-bottom: 20px; }
+    .skills-container {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 30px; margin-top: 20px;
+    }
+    .skill {
+      background: #f1f2f6; padding: 20px; border-radius: 10px;
+      width: 140px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .skill:hover { transform: translateY(-5px); }
+    .skill i { font-size: 36px; color: #192a56; margin-bottom: 10px; }
+    .skill span { display: block; font-weight: 500; }
+
+    /* === Projects === */
+    #projects { background-color: #fff; }
+    #projects h2 { text-align: center; margin-bottom: 30px; color: #192a56; }
+    .project-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #f5f6fa; border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden; transition: transform 0.3s;
+    }
+    .project-card:hover { transform: translateY(-5px); }
+
+    .project-card img { width: 100%; height: 200px; object-fit: cover; }
+    .project-content { padding: 15px; }
+    .project-content h3 { margin-top: 0; }
+    .project-content p { font-size: 15px; color: #555; }
+
+    .github-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 15px; color: #192a56; text-decoration: none;
+    }
+    .github-link:hover { color: #00a8ff; }
+
+    /* === Contact === */
+    #contact { background-color: #f1f2f6; text-align: center; }
+    #contact h2 { color: #192a56; }
+    form {
+      max-width: 600px; margin: 30px auto;
+      display: flex; flex-direction: column; gap: 15px;
+    }
+    input, textarea {
+      padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;
+    }
+    textarea { resize: vertical; height: 100px; }
+    button {
+      background-color: #192a56; color: white; border: none;
+      padding: 12px; border-radius: 5px; cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover { background-color: #00a8ff; }
+
+    footer {
+      background: #192a56; color: white;
+      text-align: center; padding: 15px 0; font-size: 14px;
+    }
+
+    /* === Modals === */
+    .modal { display: none; position: fixed; z-index: 100;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center; align-items: center;
+    }
+    .modal-content {
+      background: #fff; border-radius: 10px;
+      max-width: 800px; width: 90%; padding: 30px;
+      position: relative; overflow-y: auto; max-height: 90vh;
+    }
+    .modal-content img {
+      width: 100%; border-radius: 10px; margin-bottom: 15px;
+    }
+    .close {
+      position: absolute; top: 10px; right: 20px;
+      font-size: 28px; font-weight: bold;
+      color: #333; cursor: pointer;
+    }
+    .close:hover { color: #00a8ff; }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Header -->
   <header>
-    <h1>Kelin Sanghani</h1>
-    <h2>Data Analyst | Business Analyst</h2>
-    <p>Toronto, ON | kelin.email@example.com | 
-       <a href="https://www.linkedin.com/in/kelin-sanghani" target="_blank">LinkedIn</a> | 
-       <a href="https://kelinsanghani.github.io/" target="_blank">GitHub</a>
-    </p>
+    <nav>
+      <h1>Kelin Sanghani</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/kelinsanghani" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/kelinsanghani" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="Kelin_Sanghani_Resume.pdf" class="btn" download>Resume</a>
+      </div>
+    </nav>
   </header>
 
+  <!-- Hero -->
+  <section id="home">
+    <h1>Hi, I'm Kelin Sanghani</h1>
+    <p>A passionate Data Analyst transforming raw data into actionable insights through visualization, machine learning, and storytelling.</p>
+    <a href="#projects" class="btn">Explore My Work</a>
+  </section>
+
+  <!-- About -->
   <section id="about">
-    <h3>About Me</h3>
-    <p>
-      Data Analyst with 1 year of professional and freelance experience, skilled in data visualization, 
-      machine learning, and business analytics. Experienced in SQL, Python, Excel, Power BI, and Tableau 
-      with a focus on turning data into actionable insights.
-    </p>
+    <h2>About Me</h2>
+    <p>I'm a data analyst skilled in Excel, SQL, Power BI, and Python. I turn complex datasets into meaningful insights through visualization and predictive analysis. My goal is to enable businesses to make smarter, evidence-based decisions.</p>
   </section>
 
+  <!-- Skills -->
   <section id="skills">
-    <h3>Skills</h3>
-    <ul>
-      <li><b>Technical:</b> Python (Pandas, NumPy, Matplotlib), SQL, Excel, Power BI, Tableau, Data Modeling, ML</li>
-      <li><b>Professional:</b> Problem Solving, Project Management, Requirement Gathering, Collaboration</li>
-    </ul>
+    <h2>Technical Skills</h2>
+    <div class="skills-container">
+      <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
+      <div class="skill"><i class="fas fa-database"></i><span>SQL</span></div>
+      <div class="skill"><i class="fab fa-microsoft"></i><span>Excel</span></div>
+      <div class="skill"><i class="fas fa-chart-bar"></i><span>Power BI</span></div>
+      <div class="skill"><i class="fas fa-brain"></i><span>Machine Learning</span></div>
+      <div class="skill"><i class="fas fa-project-diagram"></i><span>Data Visualization</span></div>
+      <div class="skill"><i class="fas fa-code"></i><span>Git & GitHub</span></div>
+    </div>
   </section>
 
+  <!-- Projects -->
   <section id="projects">
-    <h3>Projects</h3>
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df" alt="Diabetes Prediction">
+        <div class="project-content">
+          <h3>Diabetes Prediction Using ML</h3>
+          <p>Compared ML models on BRFSS2015 dataset using SHAP & LIME for interpretability.</p>
+          <a href="https://github.com/kelinsanghani/diabetes-prediction" class="github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <span class="btn" onclick="openModal('modal1')">View Details</span>
+        </div>
+      </div>
 
-    <div class="project">
-      <h4>Retail Store Sales Analysis</h4>
-      <p>
-        Analyzed retail sales data using Python and Excel to identify trends and optimize inventory.
-        Created Power BI dashboards for visualizing performance across regions and categories.
-      </p>
-      <a href="#" target="_blank">View Project →</a>
-    </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1600267185393-e158a98703de" alt="Retail Sales Analysis">
+        <div class="project-content">
+          <h3>Retail Store Sales Analysis</h3>
+          <p>Analyzed sales trends and visualized KPIs using Excel, Power BI, and Python.</p>
+          <a href="https://github.com/kelinsanghani/retail-sales-analysis" class="github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <span class="btn" onclick="openModal('modal2')">View Details</span>
+        </div>
+      </div>
 
-    <div class="project">
-      <h4>Diabetes Prediction Using Machine Learning</h4>
-      <p>
-        Built predictive models (Logistic Regression, KNN, XGBoost, LightGBM) using Python.
-        Used SHAP and LIME for model interpretability and visualized insights in Tableau.
-      </p>
-      <a href="#" target="_blank">View Project →</a>
-    </div>
-
-    <div class="project">
-      <h4>Ethereum Price Fluctuation Analysis</h4>
-      <p>
-        Explored Ethereum price trends using Python and Excel.
-        Created charts showing volatility and correlation with market indicators.
-      </p>
-      <a href="#" target="_blank">View Project →</a>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3" alt="Customer Segmentation">
+        <div class="project-content">
+          <h3>Customer Segmentation</h3>
+          <p>Applied K-Means clustering to identify high-value customer groups.</p>
+          <a href="https://github.com/kelinsanghani/customer-segmentation" class="github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <span class="btn" onclick="openModal('modal3')">View Details</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="education">
-    <h3>Education</h3>
-    <ul>
-      <li><b>Master of Science in Big Data Analytics</b> — Trent University, Ontario (2023)</li>
-      <li><b>Bachelor of Technology in Information Technology</b> — Gujarat Technological University, India (2021)</li>
-    </ul>
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2>Diabetes Prediction Using Machine Learning</h2>
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" alt="Diabetes Dashboard">
+      <p>This project predicts diabetes using ML models on the BRFSS2015 dataset. Implemented Logistic Regression, KNN, Gradient Boosting, XGBoost, and LightGBM. SHAP & LIME explain model predictions for transparency.</p>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>Retail Store Sales Analysis</h2>
+      <img src="https://images.unsplash.com/photo-1581093588401-22f832e6a9ce" alt="Retail Dashboard">
+      <p>Analyzed sales data to uncover seasonal patterns and regional performance using Excel, Power BI, and Python visualization libraries.</p>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2>Customer Segmentation</h2>
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Customer Segmentation">
+      <p>Segmented customers using K-Means and PCA, optimizing marketing strategy by targeting high-value clusters with personalized campaigns.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s collaborate or discuss data opportunities.</p>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>Or email me directly: <a href="mailto:ksanghani26@gmail.com">ksanghani26@gmail.com</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Kelin Sanghani | <a href="mailto:kelin.sanghani@gmail.com">Email Me</a></p>
+    © 2025 Kelin Sanghani | Data Analyst Portfolio
   </footer>
+
+  <script>
+    function openModal(id) { document.getElementById(id).style.display = "flex"; }
+    function closeModal(id) { document.getElementById(id).style.display = "none"; }
+    window.onclick = function(e) {
+      const modals = document.querySelectorAll(".modal");
+      modals.forEach(modal => { if (e.target == modal) modal.style.display = "none"; });
+    };
+  </script>
 </body>
 </html>
