@@ -4,178 +4,73 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kelin Sanghani | Data Analyst Portfolio</title>
-
-  <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/a2e0f1f65d.js" crossorigin="anonymous"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; scroll-behavior: smooth; }
-    body {
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      background-color: #f5f6fa;
-      color: #2f3640;
-    }
+    * {box-sizing: border-box; scroll-behavior: smooth;}
+    body {font-family: "Poppins", sans-serif; margin:0; background:#f8f9fb; color:#2f3640;}
 
-    header {
-      background: #192a56;
-      color: #fff;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+    header {background:#192a56; color:#fff; position:sticky; top:0; z-index:10;}
+    nav {display:flex; justify-content:space-between; align-items:center; width:90%; margin:auto; padding:15px 0;}
+    nav h1 {font-size:22px; font-weight:600;}
+    nav ul {display:flex; gap:20px; list-style:none; margin:0;}
+    nav a {color:white; text-decoration:none; font-weight:500;}
+    nav a:hover {color:#00a8ff;}
+    .social-icons a {color:white; font-size:20px; margin-left:10px;}
+    .social-icons a:hover {color:#00a8ff;}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      margin: auto;
-    }
-
-    nav h1 { font-size: 24px; letter-spacing: 1px; }
-
-    nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
-    nav ul li { margin-left: 20px; }
-    nav ul li a {
-      color: #fff; text-decoration: none; font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover { color: #00a8ff; }
-
-    .social-icons {
-      display: flex; align-items: center; gap: 15px;
-    }
-    .social-icons a {
-      color: #fff; font-size: 20px;
-      transition: color 0.3s;
-    }
-    .social-icons a:hover { color: #00a8ff; }
-
-    section { padding: 60px 10%; }
-
-    /* === Hero === */
+    /* Hero */
     #home {
-      display: flex; flex-direction: column; align-items: center;
-      justify-content: center; text-align: center;
-      min-height: 100vh;
-      background: linear-gradient(rgba(25,42,86,0.8), rgba(25,42,86,0.8)),
-        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71') center/cover;
-      color: white;
+      display:flex; align-items:center; justify-content:center;
+      flex-wrap:wrap; min-height:100vh; background:linear-gradient(rgba(25,42,86,0.85), rgba(25,42,86,0.85)), 
+      url('https://images.unsplash.com/photo-1551288049-bebda4e38f71') center/cover; color:white; padding:60px 10%;
     }
-    #home h1 { font-size: 42px; margin-bottom: 10px; }
-    #home p { font-size: 20px; max-width: 650px; }
-    .btn {
-      display: inline-block; background: #00a8ff; color: #fff;
-      padding: 10px 20px; border-radius: 5px; text-decoration: none;
-      transition: background 0.3s; margin-top: 15px;
-    }
-    .btn:hover { background: #0097e6; }
+    .hero-content {flex:1 1 400px; max-width:550px;}
+    .hero-content h1 {font-size:45px; margin-bottom:15px;}
+    .hero-content p {font-size:18px; line-height:1.6; color:#dcdde1;}
+    .hero-buttons {margin-top:25px;}
+    .btn {background:#00a8ff; color:white; padding:10px 20px; border-radius:5px; text-decoration:none; margin-right:10px; transition:0.3s;}
+    .btn:hover {background:#0097e6;}
+    .hero-img {flex:1 1 300px; display:flex; justify-content:center;}
+    .hero-img img {width:280px; height:280px; border-radius:50%; object-fit:cover; border:4px solid #00a8ff; box-shadow:0 4px 15px rgba(0,0,0,0.3);}
 
-    /* === About (merged with Skills) === */
-    #about {
-      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-      background-color: #fff;
-      gap: 40px;
-    }
-    #about img {
-      width: 230px; height: 230px; border-radius: 50%;
-      object-fit: cover; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-    .about-content {
-      flex: 1 1 400px;
-    }
-    .about-content h2 { color: #192a56; }
-    .about-content p { line-height: 1.6; margin-bottom: 20px; }
+    /* About */
+    #about {padding:80px 10%; background:white; display:flex; flex-wrap:wrap; align-items:center; gap:40px;}
+    #about img {width:250px; height:250px; border-radius:50%; object-fit:cover; box-shadow:0 2px 10px rgba(0,0,0,0.2);}
+    .about-text {flex:1 1 500px;}
+    .about-text h2 {color:#192a56; font-size:32px; margin-bottom:10px;}
+    .about-text p {line-height:1.7; color:#555;}
+    .skills-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:15px; margin-top:25px;}
+    .skill-card {background:#f1f2f6; border-radius:10px; padding:15px; text-align:center; transition:transform 0.3s;}
+    .skill-card:hover {transform:translateY(-4px);}
+    .skill-card i {font-size:28px; color:#192a56;}
+    .skill-card span {display:block; margin-top:8px; font-weight:500;}
 
-    .skills-list {
-      display: flex; flex-wrap: wrap; gap: 20px;
-    }
-    .skill {
-      background: #f1f2f6; border-radius: 10px; padding: 10px 20px;
-      display: flex; align-items: center; gap: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .skill i { font-size: 20px; color: #192a56; }
+    /* Projects */
+    #projects {padding:80px 10%;}
+    #projects h2 {text-align:center; color:#192a56; margin-bottom:40px;}
+    .project-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:25px;}
+    .project-card {background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+    .project-card img {width:100%; height:200px; object-fit:cover;}
+    .project-content {padding:20px;}
+    .project-tags span {background:#00a8ff; color:white; padding:4px 10px; border-radius:4px; font-size:12px; margin-right:5px;}
+    .project-content h3 {margin-top:10px; color:#192a56;}
+    .project-content p {font-size:15px; color:#555;}
+    .project-content .btn {margin-top:10px; display:inline-block;}
 
-    /* === Projects === */
-    #projects h2 { text-align: center; color: #192a56; margin-bottom: 30px; }
-    .project-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
-    .project-card {
-      background: #f5f6fa; border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      overflow: hidden; transition: transform 0.3s;
-    }
-    .project-card:hover { transform: translateY(-5px); }
-    .project-card img { width: 100%; height: 200px; object-fit: cover; }
-    .project-content { padding: 15px; }
-    .project-content h3 { margin-top: 0; }
-    .project-content p { font-size: 15px; color: #555; }
-    .github-link {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 15px; color: #192a56; text-decoration: none;
-    }
-    .github-link:hover { color: #00a8ff; }
+    /* Contact */
+    #contact {background:#f1f2f6; padding:70px 10%; text-align:center;}
+    #contact h2 {color:#192a56; margin-bottom:20px;}
+    form {max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px;}
+    input, textarea {padding:12px; border:1px solid #ccc; border-radius:5px;}
+    button {background:#192a56; color:white; border:none; padding:12px; border-radius:5px; cursor:pointer;}
+    button:hover {background:#00a8ff;}
 
-    /* === Contact === */
-    #contact { background-color: #f1f2f6; text-align: center; }
-    #contact h2 { color: #192a56; }
-    form {
-      max-width: 600px; margin: 30px auto;
-      display: flex; flex-direction: column; gap: 15px;
-    }
-    input, textarea {
-      padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;
-    }
-    textarea { resize: vertical; height: 100px; }
-    button {
-      background-color: #192a56; color: white; border: none;
-      padding: 12px; border-radius: 5px; cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover { background-color: #00a8ff; }
-
-    footer {
-      background: #192a56; color: white;
-      text-align: center; padding: 15px 0; font-size: 14px;
-    }
-
-    /* === Modals === */
-    .modal { display: none; position: fixed; z-index: 100;
-      left: 0; top: 0; width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.7);
-      justify-content: center; align-items: center;
-    }
-    .modal-content {
-      background: #fff; border-radius: 10px;
-      max-width: 850px; width: 90%; padding: 30px;
-      position: relative; overflow-y: auto; max-height: 90vh;
-    }
-    .modal-content img {
-      width: 100%; border-radius: 10px; margin-bottom: 15px;
-    }
-    .modal-gallery img {
-      width: 100%; margin-bottom: 10px; border-radius: 10px;
-    }
-    .close {
-      position: absolute; top: 10px; right: 20px;
-      font-size: 28px; font-weight: bold;
-      color: #333; cursor: pointer;
-    }
-    .close:hover { color: #00a8ff; }
-
-    @media (max-width: 768px) {
-      #about { flex-direction: column; text-align: center; }
-    }
+    footer {background:#192a56; color:white; text-align:center; padding:15px; font-size:14px;}
   </style>
 </head>
-
 <body>
-  <!-- Header -->
+
   <header>
     <nav>
       <h1>Kelin Sanghani</h1>
@@ -186,95 +81,74 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/kelinsanghani" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/kelinsanghani" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="Kelin_Sanghani_Resume.pdf" class="btn" download>Resume</a>
+        <a href="https://linkedin.com/in/kelinsanghani"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/kelinsanghani"><i class="fab fa-github"></i></a>
       </div>
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section id="home">
-    <h1>Hi, I'm Kelin Sanghani</h1>
-    <p>Data Analyst passionate about transforming complex data into insights and visual stories through advanced analytics, dashboards, and machine learning.</p>
-    <a href="#projects" class="btn">Explore My Work</a>
+    <div class="hero-content">
+      <h1>Hi, I'm Kelin Sanghani</h1>
+      <p>A passionate <b>Data Analyst</b> with a knack for uncovering business insights through data storytelling, visualization, and machine learning. I transform complex datasets into meaningful narratives that drive strategic decisions.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="Kelin_Sanghani_Resume.pdf" class="btn">Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="profile.jpg" alt="Kelin Sanghani">
+    </div>
   </section>
 
-  <!-- About + Skills -->
+  <!-- About Section -->
   <section id="about">
-    <img src="profile.jpg" alt="Kelin Sanghani Profile">
-    <div class="about-content">
+    <img src="profile.jpg" alt="Kelin Sanghani">
+    <div class="about-text">
       <h2>About Me</h2>
-      <p>I'm a data analyst with experience in Python, SQL, Power BI, and Excel. I love transforming raw data into meaningful insights that drive smarter business decisions. With hands-on experience in visualization and predictive analytics, I combine technical expertise with storytelling.</p>
-
-      <div class="skills-list">
-        <div class="skill"><i class="fab fa-python"></i> Python</div>
-        <div class="skill"><i class="fas fa-database"></i> SQL</div>
-        <div class="skill"><i class="fas fa-chart-line"></i> Power BI</div>
-        <div class="skill"><i class="fab fa-microsoft"></i> Excel</div>
-        <div class="skill"><i class="fas fa-brain"></i> Machine Learning</div>
-        <div class="skill"><i class="fas fa-code-branch"></i> GitHub</div>
+      <p>I’m a results-driven Data Analyst skilled in <b>Python, SQL, Power BI, Excel, and Machine Learning</b>. My journey blends technical proficiency with a passion for visualization and insight-driven decisions. I’ve worked on projects spanning predictive modeling, sales forecasting, and exploratory analysis using modern analytics tools and frameworks.</p>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="skill-card"><i class="fas fa-database"></i><span>SQL</span></div>
+        <div class="skill-card"><i class="fas fa-chart-line"></i><span>Power BI</span></div>
+        <div class="skill-card"><i class="fab fa-microsoft"></i><span>Excel</span></div>
+        <div class="skill-card"><i class="fas fa-brain"></i><span>Machine Learning</span></div>
+        <div class="skill-card"><i class="fab fa-github"></i><span>GitHub</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects Section -->
   <section id="projects">
     <h2>Featured Projects</h2>
     <div class="project-grid">
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df" alt="Diabetes Prediction">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" alt="Diabetes Prediction">
         <div class="project-content">
+          <div class="project-tags"><span>Machine Learning</span><span>Health Analytics</span></div>
           <h3>Diabetes Prediction Using ML</h3>
-          <p>Comparative analysis of multiple ML models with explainable AI tools (SHAP, LIME).</p>
-          <a href="https://github.com/kelinsanghani/diabetes-prediction" class="github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          <span class="btn" onclick="openModal('modal1')">View Details</span>
+          <p>Compared multiple ML models with explainable AI (SHAP, LIME) to identify key diabetes risk indicators.</p>
+          <a href="https://github.com/kelinsanghani/diabetes-prediction" class="btn" target="_blank">View on GitHub</a>
         </div>
       </div>
 
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1600267185393-e158a98703de" alt="Retail Sales Analysis">
+        <img src="https://images.unsplash.com/photo-1600267185393-e158a98703de" alt="Retail Analysis">
         <div class="project-content">
+          <div class="project-tags"><span>Data Visualization</span><span>Business Insights</span></div>
           <h3>Retail Store Sales Analysis</h3>
-          <p>Excel, Power BI, and Python-driven sales trend visualization and forecasting.</p>
-          <a href="https://github.com/kelinsanghani/retail-sales-analysis" class="github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          <span class="btn" onclick="openModal('modal2')">View Details</span>
+          <p>Analyzed retail performance using Excel, Power BI, and Python to identify key trends and forecast growth.</p>
+          <a href="https://github.com/kelinsanghani/retail-sales-analysis" class="btn" target="_blank">View on GitHub</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Project Modals -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal1')">&times;</span>
-      <h2>Diabetes Prediction Using Machine Learning</h2>
-      <div class="modal-gallery">
-        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" alt="Dashboard 1">
-        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3" alt="Model Comparison">
-      </div>
-      <p>This project aimed to predict diabetes occurrence using health data from the BRFSS2015 dataset. Multiple ML models—Logistic Regression, KNN, Gradient Boosting, XGBoost, and LightGBM—were trained and evaluated.</p>
-      <p><strong>Key Findings:</strong> XGBoost achieved 90% accuracy. SHAP and LIME visualizations highlighted BMI, age, and glucose level as top predictors. These insights can support preventive healthcare decisions.</p>
-    </div>
-  </div>
-
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal2')">&times;</span>
-      <h2>Retail Store Sales Analysis</h2>
-      <div class="modal-gallery">
-        <img src="https://images.unsplash.com/photo-1581093588401-22f832e6a9ce" alt="Sales Dashboard">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Trends Graph">
-      </div>
-      <p>Performed detailed retail sales analysis using Excel pivot tables, Power BI dashboards, and Python visualizations to track category performance and sales KPIs.</p>
-      <p><strong>Final Discovery:</strong> Identified seasonal demand patterns and regional underperformance, leading to 15% improvement in inventory efficiency and revenue targeting.</p>
-    </div>
-  </div>
-
-  <!-- Contact -->
+  <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Let’s collaborate or discuss data opportunities.</p>
+    <h2>Get in Touch</h2>
+    <p>Let’s collaborate or discuss analytics opportunities. I typically respond within a day.</p>
     <form action="https://formspree.io/f/your-form-id" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
@@ -284,17 +158,6 @@
     <p>Or email me directly: <a href="mailto:ksanghani26@gmail.com">ksanghani26@gmail.com</a></p>
   </section>
 
-  <footer>
-    © 2025 Kelin Sanghani | Data Analyst Portfolio
-  </footer>
-
-  <script>
-    function openModal(id) { document.getElementById(id).style.display = "flex"; }
-    function closeModal(id) { document.getElementById(id).style.display = "none"; }
-    window.onclick = function(e) {
-      const modals = document.querySelectorAll(".modal");
-      modals.forEach(modal => { if (e.target == modal) modal.style.display = "none"; });
-    };
-  </script>
+  <footer>© 2025 Kelin Sanghani | Data Analyst Portfolio</footer>
 </body>
 </html>
