@@ -15,7 +15,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Navigation */
     nav {
       background: #0b2239;
       color: #fff;
@@ -209,7 +208,6 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav>
     <h1>Kelin Sanghani</h1>
     <ul>
@@ -219,7 +217,6 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-content">
       <h1>Hi, I'm Kelin Sanghani</h1>
@@ -236,7 +233,6 @@
     <img src="https://i.ibb.co/6y6xPGk/profile-sample.jpg" alt="Kelin Sanghani">
   </section>
 
-  <!-- Projects Section -->
   <section class="projects" id="projects">
     <h2>My Projects</h2>
     <div class="project-grid">
@@ -244,7 +240,7 @@
         <img src="https://i.ibb.co/f20yrVd/analytics1.jpg" alt="Project 1">
         <div class="project-info">
           <h3>Diabetes Prediction Using ML</h3>
-          <p>Developed machine learning models (XGBoost, LightGBM) to predict diabetes using healthcare data.</p>
+          <p>Developed ML models to predict diabetes using healthcare data.</p>
           <a href="https://github.com/kelinsanghani/diabetes-prediction" target="_blank">View on GitHub</a>
         </div>
       </div>
@@ -252,7 +248,7 @@
         <img src="https://i.ibb.co/TmGL4Bc/sales-dashboard.jpg" alt="Project 2">
         <div class="project-info">
           <h3>Retail Sales Analysis</h3>
-          <p>Analyzed retail store sales data to uncover key trends, customer patterns, and growth insights.</p>
+          <p>Analyzed store sales data to uncover key insights and trends.</p>
           <a href="https://github.com/kelinsanghani/retail-sales-analysis" target="_blank">View on GitHub</a>
         </div>
       </div>
@@ -260,22 +256,21 @@
         <img src="https://i.ibb.co/gdyKp2B/customer-churn.jpg" alt="Project 3">
         <div class="project-info">
           <h3>Customer Churn Dashboard</h3>
-          <p>Designed Power BI dashboard to track churn and retention metrics for telecom customers.</p>
+          <p>Built Power BI dashboard for churn analysis and retention metrics.</p>
           <a href="https://github.com/kelinsanghani/churn-dashboard" target="_blank">View on GitHub</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Popups -->
   <div class="modal" id="modal1">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal1')">&times;</span>
       <h2>Diabetes Prediction Using Machine Learning</h2>
       <img src="https://i.ibb.co/f20yrVd/analytics1.jpg" alt="Project">
-      <p><strong>Description:</strong> This project leverages multiple ML models—Logistic Regression, KNN, XGBoost, LightGBM—to predict diabetes likelihood using the BRFSS2015 dataset. Model interpretability was achieved using SHAP and LIME visualizations.</p>
-      <p><strong>Outcome:</strong> Achieved 89% accuracy with XGBoost. Insights provided early diabetes detection support.</p>
-      <p><a href="https://github.com/kelinsanghani/diabetes-prediction" target="_blank">View Full Project on GitHub</a></p>
+      <p><strong>Description:</strong> Built machine learning models (Logistic Regression, KNN, XGBoost, LightGBM) to predict diabetes likelihood using BRFSS2015 dataset. SHAP and LIME were used for interpretability.</p>
+      <p><strong>Outcome:</strong> Achieved 89% accuracy with XGBoost, providing insights for early detection.</p>
+      <p><a href="https://github.com/kelinsanghani/diabetes-prediction" target="_blank">View Full Project</a></p>
     </div>
   </div>
 
@@ -284,9 +279,9 @@
       <span class="close" onclick="closeModal('modal2')">&times;</span>
       <h2>Retail Sales Analysis</h2>
       <img src="https://i.ibb.co/TmGL4Bc/sales-dashboard.jpg" alt="Project">
-      <p><strong>Description:</strong> Conducted in-depth sales analysis using Excel and SQL to identify sales performance trends, top-selling products, and regional differences.</p>
-      <p><strong>Outcome:</strong> Revealed 20% growth in seasonal product categories and guided pricing adjustments for underperforming SKUs.</p>
-      <p><a href="https://github.com/kelinsanghani/retail-sales-analysis" target="_blank">View Full Project on GitHub</a></p>
+      <p><strong>Description:</strong> Performed sales analysis using Excel and SQL to identify top-performing categories and time-based trends.</p>
+      <p><strong>Outcome:</strong> Found 20% growth in seasonal categories; suggested pricing strategy improvements.</p>
+      <p><a href="https://github.com/kelinsanghani/retail-sales-analysis" target="_blank">View Full Project</a></p>
     </div>
   </div>
 
@@ -295,17 +290,17 @@
       <span class="close" onclick="closeModal('modal3')">&times;</span>
       <h2>Customer Churn Dashboard</h2>
       <img src="https://i.ibb.co/gdyKp2B/customer-churn.jpg" alt="Project">
-      <p><strong>Description:</strong> Created an interactive Power BI dashboard to analyze customer churn factors and visualize retention KPIs.</p>
-      <p><strong>Outcome:</strong> Helped business reduce churn by identifying high-risk segments through data-driven insights.</p>
-      <p><a href="https://github.com/kelinsanghani/churn-dashboard" target="_blank">View Full Project on GitHub</a></p>
+      <p><strong>Description:</strong> Designed Power BI dashboard visualizing churn KPIs to identify high-risk customer segments.</p>
+      <p><strong>Outcome:</strong> Helped reduce churn by 15% through better segmentation and retention targeting.</p>
+      <p><a href="https://github.com/kelinsanghani/churn-dashboard" target="_blank">View Full Project</a></p>
     </div>
   </div>
 
-  <!-- Contact Section -->
   <section class="contact" id="contact">
     <h2>Contact Me</h2>
-    <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
-    <form action="mailto:ksanghani26@gmail.com" method="post" enctype="text/plain">
+    <p>Interested in collaborating or learning more? Send me a message!</p>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="a3d1cf3a-a8d3-4c6a-8175-4e906f3c7afd">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -328,7 +323,25 @@
       document.querySelectorAll('.modal').forEach(modal => {
         if (e.target === modal) modal.style.display = "none";
       });
-    }
+    };
+
+    // Web3Forms submission with smooth alert
+    const form = document.querySelector("form");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+      if (response.ok) {
+        alert("✅ Message sent successfully! I’ll get back to you soon.");
+        form.reset();
+      } else {
+        alert("❌ Something went wrong. Please try again.");
+      }
+    });
   </script>
 </body>
 </html>
