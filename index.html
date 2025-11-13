@@ -66,7 +66,6 @@
     }
     #home h1 { font-size: 42px; margin-bottom: 10px; }
     #home p { font-size: 20px; max-width: 650px; }
-
     .btn {
       display: inline-block; background: #00a8ff; color: #fff;
       padding: 10px 20px; border-radius: 5px; text-decoration: none;
@@ -74,47 +73,48 @@
     }
     .btn:hover { background: #0097e6; }
 
-    /* === About === */
-    #about { background-color: #f1f2f6; text-align: center; }
-    #about h2 { color: #192a56; margin-bottom: 15px; }
-    #about p { max-width: 700px; margin: auto; line-height: 1.6; }
+    /* === About (merged with Skills) === */
+    #about {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      background-color: #fff;
+      gap: 40px;
+    }
+    #about img {
+      width: 230px; height: 230px; border-radius: 50%;
+      object-fit: cover; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .about-content {
+      flex: 1 1 400px;
+    }
+    .about-content h2 { color: #192a56; }
+    .about-content p { line-height: 1.6; margin-bottom: 20px; }
 
-    /* === Skills === */
-    #skills { background: #fff; text-align: center; }
-    #skills h2 { color: #192a56; margin-bottom: 20px; }
-    .skills-container {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 30px; margin-top: 20px;
+    .skills-list {
+      display: flex; flex-wrap: wrap; gap: 20px;
     }
     .skill {
-      background: #f1f2f6; padding: 20px; border-radius: 10px;
-      width: 140px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      background: #f1f2f6; border-radius: 10px; padding: 10px 20px;
+      display: flex; align-items: center; gap: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .skill:hover { transform: translateY(-5px); }
-    .skill i { font-size: 36px; color: #192a56; margin-bottom: 10px; }
-    .skill span { display: block; font-weight: 500; }
+    .skill i { font-size: 20px; color: #192a56; }
 
     /* === Projects === */
-    #projects { background-color: #fff; }
-    #projects h2 { text-align: center; margin-bottom: 30px; color: #192a56; }
+    #projects h2 { text-align: center; color: #192a56; margin-bottom: 30px; }
     .project-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
     }
-
     .project-card {
       background: #f5f6fa; border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       overflow: hidden; transition: transform 0.3s;
     }
     .project-card:hover { transform: translateY(-5px); }
-
     .project-card img { width: 100%; height: 200px; object-fit: cover; }
     .project-content { padding: 15px; }
     .project-content h3 { margin-top: 0; }
     .project-content p { font-size: 15px; color: #555; }
-
     .github-link {
       display: inline-flex; align-items: center; gap: 5px;
       font-size: 15px; color: #192a56; text-decoration: none;
@@ -152,11 +152,14 @@
     }
     .modal-content {
       background: #fff; border-radius: 10px;
-      max-width: 800px; width: 90%; padding: 30px;
+      max-width: 850px; width: 90%; padding: 30px;
       position: relative; overflow-y: auto; max-height: 90vh;
     }
     .modal-content img {
       width: 100%; border-radius: 10px; margin-bottom: 15px;
+    }
+    .modal-gallery img {
+      width: 100%; margin-bottom: 10px; border-radius: 10px;
     }
     .close {
       position: absolute; top: 10px; right: 20px;
@@ -166,7 +169,7 @@
     .close:hover { color: #00a8ff; }
 
     @media (max-width: 768px) {
-      nav ul { display: none; }
+      #about { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -179,7 +182,6 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -194,27 +196,25 @@
   <!-- Hero -->
   <section id="home">
     <h1>Hi, I'm Kelin Sanghani</h1>
-    <p>A passionate Data Analyst transforming raw data into actionable insights through visualization, machine learning, and storytelling.</p>
+    <p>Data Analyst passionate about transforming complex data into insights and visual stories through advanced analytics, dashboards, and machine learning.</p>
     <a href="#projects" class="btn">Explore My Work</a>
   </section>
 
-  <!-- About -->
+  <!-- About + Skills -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>I'm a data analyst skilled in Excel, SQL, Power BI, and Python. I turn complex datasets into meaningful insights through visualization and predictive analysis. My goal is to enable businesses to make smarter, evidence-based decisions.</p>
-  </section>
+    <img src="profile.jpg" alt="Kelin Sanghani Profile">
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>I'm a data analyst with experience in Python, SQL, Power BI, and Excel. I love transforming raw data into meaningful insights that drive smarter business decisions. With hands-on experience in visualization and predictive analytics, I combine technical expertise with storytelling.</p>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills-container">
-      <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
-      <div class="skill"><i class="fas fa-database"></i><span>SQL</span></div>
-      <div class="skill"><i class="fab fa-microsoft"></i><span>Excel</span></div>
-      <div class="skill"><i class="fas fa-chart-bar"></i><span>Power BI</span></div>
-      <div class="skill"><i class="fas fa-brain"></i><span>Machine Learning</span></div>
-      <div class="skill"><i class="fas fa-project-diagram"></i><span>Data Visualization</span></div>
-      <div class="skill"><i class="fas fa-code"></i><span>Git & GitHub</span></div>
+      <div class="skills-list">
+        <div class="skill"><i class="fab fa-python"></i> Python</div>
+        <div class="skill"><i class="fas fa-database"></i> SQL</div>
+        <div class="skill"><i class="fas fa-chart-line"></i> Power BI</div>
+        <div class="skill"><i class="fab fa-microsoft"></i> Excel</div>
+        <div class="skill"><i class="fas fa-brain"></i> Machine Learning</div>
+        <div class="skill"><i class="fas fa-code-branch"></i> GitHub</div>
+      </div>
     </div>
   </section>
 
@@ -226,7 +226,7 @@
         <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df" alt="Diabetes Prediction">
         <div class="project-content">
           <h3>Diabetes Prediction Using ML</h3>
-          <p>Compared ML models on BRFSS2015 dataset using SHAP & LIME for interpretability.</p>
+          <p>Comparative analysis of multiple ML models with explainable AI tools (SHAP, LIME).</p>
           <a href="https://github.com/kelinsanghani/diabetes-prediction" class="github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
           <span class="btn" onclick="openModal('modal1')">View Details</span>
         </div>
@@ -236,31 +236,25 @@
         <img src="https://images.unsplash.com/photo-1600267185393-e158a98703de" alt="Retail Sales Analysis">
         <div class="project-content">
           <h3>Retail Store Sales Analysis</h3>
-          <p>Analyzed sales trends and visualized KPIs using Excel, Power BI, and Python.</p>
+          <p>Excel, Power BI, and Python-driven sales trend visualization and forecasting.</p>
           <a href="https://github.com/kelinsanghani/retail-sales-analysis" class="github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
           <span class="btn" onclick="openModal('modal2')">View Details</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3" alt="Customer Segmentation">
-        <div class="project-content">
-          <h3>Customer Segmentation</h3>
-          <p>Applied K-Means clustering to identify high-value customer groups.</p>
-          <a href="https://github.com/kelinsanghani/customer-segmentation" class="github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          <span class="btn" onclick="openModal('modal3')">View Details</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Modals -->
+  <!-- Project Modals -->
   <div id="modal1" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal1')">&times;</span>
       <h2>Diabetes Prediction Using Machine Learning</h2>
-      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" alt="Diabetes Dashboard">
-      <p>This project predicts diabetes using ML models on the BRFSS2015 dataset. Implemented Logistic Regression, KNN, Gradient Boosting, XGBoost, and LightGBM. SHAP & LIME explain model predictions for transparency.</p>
+      <div class="modal-gallery">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" alt="Dashboard 1">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3" alt="Model Comparison">
+      </div>
+      <p>This project aimed to predict diabetes occurrence using health data from the BRFSS2015 dataset. Multiple ML models—Logistic Regression, KNN, Gradient Boosting, XGBoost, and LightGBM—were trained and evaluated.</p>
+      <p><strong>Key Findings:</strong> XGBoost achieved 90% accuracy. SHAP and LIME visualizations highlighted BMI, age, and glucose level as top predictors. These insights can support preventive healthcare decisions.</p>
     </div>
   </div>
 
@@ -268,17 +262,12 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal2')">&times;</span>
       <h2>Retail Store Sales Analysis</h2>
-      <img src="https://images.unsplash.com/photo-1581093588401-22f832e6a9ce" alt="Retail Dashboard">
-      <p>Analyzed sales data to uncover seasonal patterns and regional performance using Excel, Power BI, and Python visualization libraries.</p>
-    </div>
-  </div>
-
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal3')">&times;</span>
-      <h2>Customer Segmentation</h2>
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Customer Segmentation">
-      <p>Segmented customers using K-Means and PCA, optimizing marketing strategy by targeting high-value clusters with personalized campaigns.</p>
+      <div class="modal-gallery">
+        <img src="https://images.unsplash.com/photo-1581093588401-22f832e6a9ce" alt="Sales Dashboard">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Trends Graph">
+      </div>
+      <p>Performed detailed retail sales analysis using Excel pivot tables, Power BI dashboards, and Python visualizations to track category performance and sales KPIs.</p>
+      <p><strong>Final Discovery:</strong> Identified seasonal demand patterns and regional underperformance, leading to 15% improvement in inventory efficiency and revenue targeting.</p>
     </div>
   </div>
 
